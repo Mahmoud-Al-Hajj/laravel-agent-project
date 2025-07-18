@@ -12,5 +12,6 @@ Route::post('/agents/create', [AgentController::class, 'createAgent']);
 Route::post('/agents/first-or-create', [AgentController::class, 'firstOrCreateAgent']);
 Route::put('/agents/Update/{id}', [AgentController::class, 'updateAgent']);
 Route::delete('/agents/Delete/{id}', [AgentController::class, 'deleteAgent']);
+Route::post('/agents/upsert', [AgentController::class, 'upsertAgents']);
 
 

@@ -54,11 +54,14 @@ class AgentController extends Controller
     }
 
     public function upsertAgents(Request $request){
-        $request->agents;
+        $data=$request->agents;
 // will be an array of associative arrays
     Agent::upsert(
-        $agents,
+        $data,
+       uniqueBy: ['name' => $data->name],
+       update: ['type' => $data->type, 'is_active' => $data->active, 'description' => $data->description],
     );
+
 }
 
 
